@@ -2,14 +2,17 @@ import { useState } from "react";
 import axios from "axios";
 import { Container, Card } from "react-bootstrap";
 import { ToastContainer, toast } from 'react-toastify';
+import Loading from "../components/Loading";
 
 
 const Register = () => {
+  const [isLoding, setIsLoading] = useState(false);
   const [inputData, setInputData] = useState({
     name: "",
     email: "",
     password: "",
-    confirmPassword: ""
+    confirmPassword: "",
+    error_list: []
   });
 
   const handleInputChange = e => {
@@ -21,6 +24,7 @@ const Register = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setIsLoading(true);
     console.log(inputData);
     const data = {
       name: inputData.name,
@@ -31,21 +35,23 @@ const Register = () => {
     console.log(data);
     axios.get('/sanctum/csrf-cookie').then(response => {
       axios.post(`api/register`, data).then(res => {
-        console.log("success", res.data.message);
-        toast(res.data.message);
-        if (!res.data.error) {
-          setInputData({ name: "", email: "", password: "", confirmPassword: "" });
+        setIsLoading(false);
+        if (res.data.status === 200) {
+          toast.success(res.data.message);
+          setInputData({ name: "", email: "", password: "", confirmPassword: "", error_list: [] });
+        } else {
+          setInputData({ ...inputData, error_list: res.data.validation_errors });
+          toast.error(inputData.error_list.email);
         }
-      }).catch(err => {
-        console.log('error', err.data.message);
-        toast(err.data.message);
       })
+
     });
 
 
   };
   return (
     <div id="login">
+      <Loading show={isLoding} text={`Processing...`} />
       <ToastContainer />
       <Container>
         <Card className="mx-auto mt-3 mt-md-5" style={{ maxWidth: 400 }}>
@@ -56,21 +62,25 @@ const Register = () => {
               <div className="form-group mb-2">
                 <label htmlFor="name">Name</label>
                 <input onChange={handleInputChange} value={inputData.name} name="name" type="text" id="name" className="form-control" />
+                <small className="text-danger">{inputData.error_list.name}</small>
               </div>
 
               <div className="form-group mb-2">
                 <label htmlFor="name">Email</label>
                 <input onChange={handleInputChange} value={inputData.email} name="email" type="email" id="email" className="form-control" />
+                <small className="text-danger">{inputData.error_list.email}</small>
               </div>
 
               <div className="form-group mb-2">
                 <label htmlFor="password">Password</label>
                 <input onChange={handleInputChange} value={inputData.password} name="password" type="password" id="password" className="form-control" />
+                <small className="text-danger">{inputData.error_list.password}</small>
               </div>
 
               <div className="form-group mb-2">
                 <label htmlFor="cPassword">Confirm Password</label>
                 <input onChange={handleInputChange} value={inputData.confirmPassword} name="confirmPassword" type="password" id="cPassword" className="form-control" />
+                <small className="text-danger">{inputData.error_list.confirmPassword}</small>
               </div>
 
               <div className="d-grid gap-2">
