@@ -113,6 +113,7 @@
       <path value="$PROJECT_DIR$/backend_lv8/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/backend_lv8/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

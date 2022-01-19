@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="faa61899-dd1d-4467-946e-020422d0dedc" name="Changes" comment="" />
+    <list default="true" id="faa61899-dd1d-4467-946e-020422d0dedc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +16,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend_rc" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -130,6 +134,7 @@
       <path value="$PROJECT_DIR$/backend_lv8/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/backend_lv8/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -164,6 +169,7 @@
       <workItem from="1642339137563" duration="105000" />
       <workItem from="1642339246023" duration="18000" />
       <workItem from="1642339275119" duration="144000" />
+      <workItem from="1642480710468" duration="777000" />
     </task>
     <servers />
   </component>
