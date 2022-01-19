@@ -7,7 +7,10 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Home, LanguageOutlined, Login, MailOutline, Person } from "@mui/icons-material";
+import {
+  Home as HomeIcon,
+  LanguageOutlined, Login as LoginIcon, MailOutline, Person as PersonIcon
+} from "@mui/icons-material";
 import { Avatar, IconButton, ListItemButton, ListItemIcon, ListItemText, Tooltip, Typography } from "@mui/material";
 
 export default function Navigation() {
@@ -26,11 +29,11 @@ export default function Navigation() {
   };
   const menuItems = {
     "Home": {
-      icon: <Home />,
+      icon: <HomeIcon />,
       link: "/"
     },
     "About Us": {
-      icon: <Person />,
+      icon: <PersonIcon />,
       link: "/about"
     },
     "Contact Us": {
@@ -38,7 +41,7 @@ export default function Navigation() {
       link: "/contact"
     },
     "Login": {
-      icon: <Login />,
+      icon: <LoginIcon />,
       link: "/login"
     },
     "Sitemap": {
