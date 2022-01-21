@@ -32,6 +32,7 @@
       <path value="$PROJECT_DIR$/backend_lv8/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/backend_lv8/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/laravel/sanctum" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/laravel/serializable-closure" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/laravel/framework" />
@@ -113,7 +114,6 @@
       <path value="$PROJECT_DIR$/backend_lv8/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/backend_lv8/vendor/graham-campbell/result-type" />
-      <path value="$PROJECT_DIR$/backend_lv8/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

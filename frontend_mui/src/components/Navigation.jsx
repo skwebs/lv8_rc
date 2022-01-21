@@ -1,23 +1,24 @@
+// import "./Navigation/Navigation.scss";
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
-import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {
-  Home as HomeIcon,
-  LanguageOutlined, Login as LoginIcon, MailOutline, Person as PersonIcon
+  Home as HomeIcon, LanguageOutlined, Login as LoginIcon, MailOutline, Person as PersonIcon
 } from "@mui/icons-material";
 import { Avatar, IconButton, ListItemButton, ListItemIcon, ListItemText, Tooltip, Typography } from "@mui/material";
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
-export default function Navigation() {
-  const [openDrawer, setOpenDrawer] = useState(true);
+
+const Navigation = ({ openDrawer, setOpenDrawer }) => {
+
   const navigate = useNavigate();
   const location = useLocation()
-  const toggleDrawer = (open) => (event) => {
+  const toggleDrawer = (toggle) => (event) => {
     if (
       event &&
       event.type === 'keydown' &&
@@ -25,7 +26,7 @@ export default function Navigation() {
     ) {
       return;
     }
-    setOpenDrawer(open);
+    setOpenDrawer(toggle);
   };
   const menuItems = {
     "Home": {
@@ -50,15 +51,23 @@ export default function Navigation() {
     }
   }
 
+  // const handleListItemClick = (event, path) => {
+  //   navigate(path);
+  //   closeDrawerHandler();
+  // };
 
   const userSection = (
-    <Box sx={{ height: 80, bgcolor: 'primary.main' }}>
-      <Tooltip title="Open settings">
-        <IconButton sx={{ p: 0 }}>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-        </IconButton>
-      </Tooltip>
-      <Typography variant="h6" noWrap component="div">User</Typography>
+    <Box id="userSection" sx={{ bgcolor: 'primary.main', p: 2 }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+        <Tooltip title="Open settings">
+          <IconButton sx={{ p: 0 }}>
+            <Avatar src="https://v1.anshumemorial.in/assets/static/img/ama/ama-128x128.png" />
+          </IconButton>
+        </Tooltip>
+        <Typography variant="h6" component="div" sx={{ color: "white", ml: 2 }}>
+          John Doe
+        </Typography>
+      </Box>
     </Box>
   );
 
@@ -69,33 +78,38 @@ export default function Navigation() {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
-      <List>
-        {Object.keys(menuItems).map((text, index) => (
-          <ListItem disablePadding onClick={() => navigate(menuItems[text].link)} button key={index}>
-            <ListItemButton selected={menuItems[text].link === location.pathname} >
-              <ListItemIcon>
-                {menuItems[text].icon}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+      <Scrollbars autoHide style={{ width: '100%', height: `calc(100vh - 72px)` }}>
+        <List>
+          {Object.keys(menuItems).map((text, index) => (
+            <ListItem disablePadding onClick={() => navigate(menuItems[text].link)} button key={index}>
+              <ListItemButton selected={menuItems[text].link === location.pathname} >
+                <ListItemIcon>
+                  {menuItems[text].icon}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Scrollbars>
       <Divider />
     </Box>
   );
 
   return (
     <div>
-      <Button onClick={toggleDrawer(true)}>Open Drawer</Button>
       <SwipeableDrawer
         open={openDrawer}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
+        sx={{
+          '& .MuiPaper-root': { overflowY: 'hidden !important' }
+        }}
       >
         {userSection}
         {list()}
       </SwipeableDrawer>
-    </div>
+    </div >
   );
 }
+export default Navigation

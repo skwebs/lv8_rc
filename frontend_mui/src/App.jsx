@@ -1,6 +1,6 @@
 // import partial components
-import ResponsiveAppBar from './components/ResponsiveAppBar';
-import Navigation from './components/Navigation';
+// import ResponsiveAppBar from './components/ResponsiveAppBar';
+// import Navigation from './components/Navigation';
 // import page components
 import Home from './pages/Home';
 import About from './pages/About';
@@ -9,14 +9,15 @@ import Login from './pages/Login';
 import Sitemap from './pages/Sitemap';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import AppBarComponent from './components/AppBarComponent';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <ResponsiveAppBar />
-        <Navigation />
+        <AppBarComponent />
+        {/* <Navigation /> */}
+        {/* <ResponsiveAppBar /> */}
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -28,5 +29,8 @@ function App() {
     </>
   );
 }
+
+
+
 
 export default App;

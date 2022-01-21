@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "./"
+    },
+    {
+      "path": "backend_lv8"
+    },
+    {
+      "path": "frontend_mui"
+    },
+    {
+      "path": "frontend_rc"
+    }
+  ],
+  "settings": {}
+}
