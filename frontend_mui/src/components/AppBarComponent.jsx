@@ -1,39 +1,38 @@
-import { useState } from 'react';
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
-import Navigation from './Navigation';
+import {
+  AppBar,
+  Box,
+  Button,
+  IconButton,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 
-const AppBarComponent = () => {
-  const [openDrawer, setOpenDrawer] = useState(false);
-  const toggleDrawer = (open) => (event) => {
+const AppBarComponent = ({ openDrawer, setOpenDrawer }) => {
+  const toggleDrawer = open => event => {
     if (
       event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
     setOpenDrawer(open);
   };
 
-
-
-
   return (
     <>
-      <Navigation openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar >
+      <Box>
+        <AppBar>
+          <Toolbar>
             <IconButton
               size="large"
-              // edge="start"
+              edge="start"
               color="inherit"
               aria-label="menu"
               sx={{ mr: 2 }}
               onClick={toggleDrawer(true)}
-              onKeyDown={() => toggleDrawer(true)}
-            >
+              onKeyDown={() => toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -42,6 +41,7 @@ const AppBarComponent = () => {
             <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
+        <Toolbar />
       </Box>
     </>
   );

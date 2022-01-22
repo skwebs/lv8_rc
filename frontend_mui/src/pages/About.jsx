@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
-  return <div>About Us</div>;
+  return <div sx={{ textAlign: "center" }}>About Us</div>;
 };
 
 export default About;

@@ -13,5 +13,14 @@
       "path": "frontend_rc"
     }
   ],
-  "settings": {}
+  "settings": {
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "prettier.arrowParens": "avoid",
+    "prettier.jsxBracketSameLine": true,
+    "prettier.enableDebugLogs": true,
+    "npm.enableRunFromFolder": true,
+    "openInGitHub.providerType": "github"
+  }
 }
