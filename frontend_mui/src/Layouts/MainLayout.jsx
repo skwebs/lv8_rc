@@ -13,13 +13,15 @@ const MainLayout = () => {
         display: "flex",
         flexDirection: "column",
       }}>
-      <Box id="header-layout" sx={{ flex: "0 0 auto !important" }}>
+      <Box id="header-layout" sx={{ alignSelf: "flex-start" }}>
         <Navigation />
       </Box>
-      <Box id="main-layout" sx={{ flex: "1 0 auto !important" }}>
+      <Box
+        id="main-layout"
+        sx={{ display: "flex", flex: "1 0 auto !important" }}>
         <Outlet />
       </Box>
-      <Box id="footer-layout" sx={{ flex: "0 0 auto !important" }}>
+      <Box id="footer-layout" sx={{ width: "100%", alignSelf: "flex-end" }}>
         <Footer />
       </Box>
     </Box>

@@ -14,10 +14,7 @@ const Page404 = () => {
           alignItems: "center",
           width: "100%",
           height: "100vh",
-          background: `linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 100%), url(${bg}) no-repeat center center fixed`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          position: "relative",
+          background: `linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 100%), url(${bg}) no-repeat center center/cover fixed`,
         }}>
         <Card sx={{ boxShadow: 3 }}>
           <CardContent sx={{ textAlign: "center", color: "error.main" }}>

@@ -4,6 +4,7 @@ const Home = () => {
   return (
     <Box
       sx={{
+        width: "100%",
         background: `linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 100%), url(${bg}) no-repeat center center/cover fixed`,
       }}>
       <Container sx={{ py: 2 }}>

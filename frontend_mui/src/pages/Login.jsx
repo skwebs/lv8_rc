@@ -45,74 +45,50 @@ const Login = () => {
               noValidate
               autoComplete="off">
               <Grid spacing={1} container>
-                <Grid item sx={{ mx: "auto" }} xs={11} sm={6}>
+                <Grid item sx={{ mx: "auto" }} xs={12} sm={4}>
+                  <TextField label="First Name" helperText=" " size="small" />
+                </Grid>
+                <Grid item sx={{ mx: "auto" }} xs={12} sm={4}>
+                  <TextField label="Middle Name" helperText=" " size="small" />
+                </Grid>
+                <Grid item sx={{ mx: "auto" }} xs={12} sm={4}>
+                  <TextField label="Last Name" helperText=" " size="small" />
+                </Grid>
+                <Grid item sx={{ mx: "auto" }} xs={12} sm={6}>
                   <TextField
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="t"
+                    type="tel"
+                    label="Contact No."
+                    helperText=" "
                     size="small"
                   />
                 </Grid>
-
-                <Grid item sx={{ mx: "auto" }} xs={11} sm={6}>
+                <Grid item sx={{ mx: "auto" }} xs={12} sm={6}>
                   <TextField
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="t"
+                    type="email"
+                    label="Email"
+                    helperText=" "
                     size="small"
                   />
                 </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={11} sm={6}>
+                <Grid item sx={{ mx: "auto" }} xs={12} sm={6}>
                   <TextField
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="t"
+                    label="Password"
+                    helperText=" "
                     size="small"
+                    type="password"
+                    autoComplete="current-password"
                   />
                 </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={11} sm={6}>
+                <Grid item sx={{ mx: "auto" }} xs={12} sm={6}>
                   <TextField
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="t"
+                    label="Confirm Password"
+                    helperText=" "
                     size="small"
+                    type="password"
+                    autoComplete="current-password"
                   />
                 </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={11} sm={6}>
-                  <TextField
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="t"
-                    size="small"
-                  />
-                </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={11} sm={6}>
-                  <TextField
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="t"
-                    size="small"
-                  />
-                </Grid>
-
-                {/* <Grid item sx={{ mx: "auto" }} xs={11}>
-                  <TextField
-
-                    id="standard-error-helper-text"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="Incorrect entry."
-                    variant="standard"
-                    size="small"
-                  />
-                </Grid> */}
-                <Grid item sx={{ mx: "auto" }} xs={11}>
+                <Grid item sx={{ mx: "auto" }} xs={12}>
                   <Button variant="contained">Register</Button>
                   <Button sx={{ ml: 2 }} variant="text" onClick={handleClose}>
                     Close
@@ -129,23 +105,15 @@ const Login = () => {
   return (
     <>
       <RegisterDialog />
-      <Container>
+      <Container className="login" sx={{ alignSelf: "center" }}>
         <Card
           elevation={8}
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
             minWidth: 275,
-            maxWidth: 400,
-            pt: 3,
-            mt: 0,
+            maxWidth: 350,
             mx: "auto",
           }}>
           <CardContent>
-            {/* <Typography sx={{ py: 1, textAlign: 'center', }} variant="h6" gutterBottom>
-              Register
-            </Typography> */}
             <Box
               component="form"
               sx={{
@@ -154,44 +122,33 @@ const Login = () => {
               noValidate
               autoComplete="off">
               <Grid spacing={1} container>
-                <Grid item sx={{ mx: "auto" }} xs={11}>
+                <Grid item sx={{ mx: "auto" }} xs={12}>
                   <TextField
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="t"
+                    label="Username"
+                    helperText=" "
                     size="small"
+                    // variant="standard"
                   />
                 </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={11}>
+                <Grid item sx={{ mx: "auto" }} xs={12}>
                   <TextField
-                    id="outlined-error"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="t"
+                    label="Password"
+                    helperText=" "
                     size="small"
+                    // variant="standard"
+                    type="password"
+                    autoComplete="current-password"
                   />
                 </Grid>
 
-                {/* <Grid item sx={{ mx: "auto" }} xs={11}>
-                  <TextField
-
-                    id="standard-error-helper-text"
-                    label="Error"
-                    defaultValue="Hello World"
-                    helperText="Incorrect entry."
-                    variant="standard"
-                    size="small"
-                  />
-                </Grid> */}
-                <Grid item sx={{ mx: "auto" }} xs={11}>
-                  <Button variant="contained">Login</Button>
-                </Grid>
-                <Divider />
-                <Grid item sx={{ mx: "auto" }} xs={11}>
-                  <Button variant="text" onClick={handleClickOpen}>
-                    Register New User
-                  </Button>
+                <Grid item sx={{ mx: "auto" }} xs={12}>
+                  <Box
+                    sx={{ display: "flex", justifyContent: "space-between" }}>
+                    <Button variant="contained">Login</Button>
+                    <Button variant="text" onClick={handleClickOpen}>
+                      Register New User
+                    </Button>
+                  </Box>
                 </Grid>
               </Grid>
             </Box>
