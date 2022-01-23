@@ -13,6 +13,7 @@ const Page404 = () => {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
+          height: "100vh",
           background: `linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 100%), url(${bg}) no-repeat center center fixed`,
           backgroundPosition: "center",
           backgroundSize: "cover",

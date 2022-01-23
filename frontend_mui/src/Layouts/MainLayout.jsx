@@ -15,7 +15,7 @@ const MainLayout = () => {
       <Box sx={{ flex: "0 0 auto !important" }}>
         <Navigation />
       </Box>
-      <Box sx={{ flex: "1 0 auto !important" }}>
+      <Box sx={{ flex: "1 0 auto !important", py: 2 }}>
         <Outlet />
       </Box>
       <Box sx={{ flex: "0 0 auto !important" }}>
