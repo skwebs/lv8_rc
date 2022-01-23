@@ -5,6 +5,7 @@ import Home from "./../pages/Home";
 import About from "./../pages/About";
 import Contact from "./../pages/Contact";
 import Login from "./../pages/Login";
+import Register from "./../pages/Register";
 import Sitemap from "./../pages/Sitemap";
 import Page404 from "./../pages/ErrorPages/Page404";
 
@@ -17,6 +18,7 @@ const AppRoutes = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/sitemap" element={<Sitemap />} />
         </Route>
         <Route path="*" element={<Page404 />} />

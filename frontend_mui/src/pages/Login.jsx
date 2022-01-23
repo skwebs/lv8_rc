@@ -6,105 +6,14 @@ import {
   Container,
   Grid,
   Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  Divider,
   TextField,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const RegisterDialog = () => {
-    return (
-      <>
-        <Dialog
-          open={open}
-          scroll="paper"
-          onClose={handleClose}
-          aria-describedby="alert-dialog-slide-description">
-          <DialogTitle>{"Register new user!"}</DialogTitle>
-          <DialogContent
-            divider
-            sx={{ minWidth: 250, maxWidth: 600, mx: "auto", p: 2 }}>
-            <Box
-              component="form"
-              sx={{
-                pt: 1,
-                "& .MuiTextField-root": { width: "100%" },
-              }}
-              noValidate
-              autoComplete="off">
-              <Grid spacing={1} container>
-                <Grid item sx={{ mx: "auto" }} xs={12} sm={4}>
-                  <TextField label="First Name" helperText=" " size="small" />
-                </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={12} sm={4}>
-                  <TextField label="Middle Name" helperText=" " size="small" />
-                </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={12} sm={4}>
-                  <TextField label="Last Name" helperText=" " size="small" />
-                </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={12} sm={6}>
-                  <TextField
-                    type="tel"
-                    label="Contact No."
-                    helperText=" "
-                    size="small"
-                  />
-                </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={12} sm={6}>
-                  <TextField
-                    type="email"
-                    label="Email"
-                    helperText=" "
-                    size="small"
-                  />
-                </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={12} sm={6}>
-                  <TextField
-                    label="Password"
-                    helperText=" "
-                    size="small"
-                    type="password"
-                    autoComplete="current-password"
-                  />
-                </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={12} sm={6}>
-                  <TextField
-                    label="Confirm Password"
-                    helperText=" "
-                    size="small"
-                    type="password"
-                    autoComplete="current-password"
-                  />
-                </Grid>
-                <Grid item sx={{ mx: "auto" }} xs={12}>
-                  <Button variant="contained">Register</Button>
-                  <Button sx={{ ml: 2 }} variant="text" onClick={handleClose}>
-                    Close
-                  </Button>
-                </Grid>
-              </Grid>
-            </Box>
-          </DialogContent>
-        </Dialog>
-      </>
-    );
-  };
-
+  const navigate = useNavigate();
   return (
     <>
-      <RegisterDialog />
       <Container className="login" sx={{ alignSelf: "center" }}>
         <Card
           elevation={8}
@@ -128,6 +37,7 @@ const Login = () => {
                     helperText=" "
                     size="small"
                     // variant="standard"
+                    autoComplete="username"
                   />
                 </Grid>
                 <Grid item sx={{ mx: "auto" }} xs={12}>
@@ -145,7 +55,9 @@ const Login = () => {
                   <Box
                     sx={{ display: "flex", justifyContent: "space-between" }}>
                     <Button variant="contained">Login</Button>
-                    <Button variant="text" onClick={handleClickOpen}>
+                    <Button
+                      variant="text"
+                      onClick={() => navigate("/register")}>
                       Register New User
                     </Button>
                   </Box>
