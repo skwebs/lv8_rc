@@ -1,11 +1,4 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, Button, IconButton, Toolbar } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 
 const AppBarComponent = ({ openDrawer, setOpenDrawer }) => {
@@ -35,9 +28,9 @@ const AppBarComponent = ({ openDrawer, setOpenDrawer }) => {
               onKeyDown={() => toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              News
-            </Typography>
+            <Box component="div" sx={{ flexGrow: 1 }}>
+              {/** this blank space to fill and send login button to right side of the nav*/}
+            </Box>
             <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>

@@ -1,9 +1,12 @@
-import { Card, CardContent, Container, Typography } from "@mui/material";
-
+import { Box, Card, CardContent, Container, Typography } from "@mui/material";
+import bg from "./../assets/bg.jpg";
 const Home = () => {
   return (
-    <>
-      <Container>
+    <Box
+      sx={{
+        background: `linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.5) 100%), url(${bg}) no-repeat center center/cover fixed`,
+      }}>
+      <Container sx={{ py: 2 }}>
         <Card sx={{ boxShadow: 3 }}>
           <CardContent>
             <Typography variant="h6">
@@ -130,7 +133,7 @@ const Home = () => {
           </CardContent>
         </Card>
       </Container>
-    </>
+    </Box>
   );
 };
 
