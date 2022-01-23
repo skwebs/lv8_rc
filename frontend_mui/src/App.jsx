@@ -14,7 +14,7 @@ import AppRoutes from "./helpers/AppRoutes";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={`/mui/`}>
         <AppRoutes />
       </BrowserRouter>
     </>
